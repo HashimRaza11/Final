@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Responsive Customer Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            background-color: #f0f2f5;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #f7f7f7;
+            padding: 15px;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .section-title img {
+            margin-right: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar .divider {
+            margin: 10px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .sidebar .search-container {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .search-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .sidebar .details {
+            margin-top: 20px;
+        }
+
+        .sidebar .details p {
+            margin: 5px 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header, .financial-details, .tabs, .additional-info {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header .details {
+            flex: 1;
+        }
+
+        .header .details p {
+            margin: 5px 0;
+        }
+
+        .financial-details {
+            text-align: right;
+        }
+
+        .financial-details h2 {
+            margin-bottom: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .tabs button {
+            margin-right: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .tabs button.active {
+            background-color: #0056b3;
+        }
+
+        .additional-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .additional-info .section {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .additional-info .section h3 {
+            margin-bottom: 10px;
+        }
+
+        .additional-info .section p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main-content {
+                padding: 10px;
+            }
+
+            .additional-info .section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="section-title">
+            <img src="logo-placeholder.png" alt="Homepage Logo" width="20">
+            <span>Homepage</span>
+        </div>
+        
+        <div class="section-title">
+            <img src="sales-logo.png" alt="Sales Logo" width="20">
+            <span>Sales</span>
+        </div>
+        <a href="#">New Sales quote +</a>
+        <a href="#">New Salary order +</a>
+        <a href="#">Salary order list ></a>
+        <div class="divider"></div>
+        <a href="#">New Customer +</a>
+        <a href="#" id="customerListLink">Customer list ></a>
+
+        <div class="section-title">
+            <img src="purchasing-logo.png" alt="Purchasing Logo" width="20">
+            <span>Purchasing</span>
+        </div>
+        <a href="#">New Product quote +</a>
+        <a href="#">New Purchase order +</a>
+        <a href="#">Purchase order list ></a>
+        <div class="divider"></div>
+        <a href="#">New Vendor</a>
+        <a href="#">Vendor list</a>
+
+        <div class="section-title">
+            <img src="inventory-logo.png" alt="Inventory Logo" width="20">
+            <span>Inventory</span>
+        </div>
+        <a href="#">New Product +</a>
+        <a href="#">Product list ></a>
+        <a href="#">Reorder stock ></a>
+
+        <!-- Customer List Details -->
+        <div id="page2Sidebar" class="search-container">
+            <h2>Customers</h2>
+            <input type="text" placeholder="Search...">
+            <a href="#">abc</a>
+            <a href="#">Anom Inc.</a>
+            <a href="#">Beth May</a>
+            <a href="#">Bollinger Machine & Shipyard</a>
+            <a href="#">City of Newburg</a>
+            <a href="#">Eder Construction Engineers</a>
+            <a href="#">Parkway Company</a>
+            <a href="#">Production Planet</a>
+            <a href="#">Project #841025</a>
+            <a href="#">Truck 34</a>
+            <a href="#">Asshad sir</a>
+            <div class="details">
+                <p><strong>Name:</strong> abc</p>
+                <p><strong>Email:</strong> abc@example.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Fax:</strong> (123) 456-7890</p>
+                <p><strong>Website:</strong> www.abc.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div id="page1Content">
+            <div class="header">
+                <div class="details">
+                    <p><strong>Name:</strong> abc</p>
+                    <p><strong>Email:</strong> abc@example.com</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Fax:</strong> (123) 456-7890</p>
+                    <p><strong>Website:</strong> www.abc.com</p>
+                </div>
+            </div>
+
+            <div class="financial-details">
+                <h2>Balance: $0.00</h2>
+                <h2>Credit: $0.00</h2>
+            </div>
+
+            <div class="tabs">
+                <button class="active">Overview</button>
+                <button>Order History</button>
+                <button>Payment History</button>
+            </div>
+
+            <div class="additional-info">
+                <div class="section">
+                    <h3>Addresses</h3>
+                    <p>Add new address</p>
+                </div>
+                <div class="section">
+                    <h3>Preferences</h3>
+                    <p><strong>Location:</strong> Default Location</p>
+                    <p><strong>Carrier:</strong> Default Carrier</p>
+                    <p><strong>Default sales rep:</strong> Default Sales Rep</p>
+                </div>
+                <div class="section">
+                    <h3>Purchasing Info</h3>
+                    <p><strong>Pricing/Currency:</strong> USD</p>
+                    <p><strong>Discount:</strong> 0.00%</p>
+                    <p><strong>Payment terms:</strong> Net 30</p>
+                    <p><strong>Default payment method:</strong> Credit Card</p>
+                    <p><strong>Taxing scheme:</strong> Default Tax</p>
+                    <p><strong>Tax exempt #:</strong> 123456789</p>
+                </div>
+                <div class="section">
+                    <h3>Remarks</h3>
+                    <p>Add remarks...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page2Content" style="display: none;">
+            <div class="header">
+                <div class="details">
+                    <p><strong>Name:</strong> abc</p>
+                    <p><strong>Email:</strong> abc@example.com</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Fax:</strong> (123) 456-7890</p>
+                    <p><strong>Website:</strong> www.abc.com</p>
+                </div>
+            </div>
+
+            <div class="financial-details">
+                <h2>Balance: $0.00</h2>
+                <h2>Credit: $0.00</h2>
+            </div>
+
+            <div class="tabs">
+                <button class="active">Overview</button>
+                <button>Order History</button>
+                <button>Payment History</button>
+            </div>
+
+            <div class="additional-info">
+                <div class="section">
+                    <h3>Addresses</h3>
+                    <p>Add new address</p>
+                </div>
+                <div class="section">
+                    <h3>Preferences</h3>
+                    <p><strong>Location:</strong> Default Location</p>
+                    <p><strong>Carrier:</strong> Default Carrier</p>
+                    <p><strong>Default sales rep:</strong> Default Sales Rep</p>
+                </div>
+                <div class="section">
+                    <h3>Purchasing Info</h3>
+                    <p><strong>Pricing/Currency:</strong> USD</p>
+                    <p><strong>Discount:</strong> 0.00%</p>
+                    <p><strong>Payment terms:</strong> Net 30</p>
+                    <p><strong>Default payment method:</strong> Credit Card</p>
+                    <p><strong>Taxing scheme:</strong> Default Tax</p>
+                    <p><strong>Tax exempt #:</strong> 123456789</p>
+                </div>
+                <div class="section">
+                    <h3>Remarks</h3>
+                    <p>Add remarks...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('customerListLink').addEventListener('click', function() {
+            const page1Content = document.getElementById('page1Content');
+            const page2Content = document.getElementById('page2Content');
+            const page2Sidebar = document.getElementById('page2Sidebar');
+
+            page1Content.style.display = 'none';
+            page2Content.style.display = 'block';
+            page2Sidebar.style.display = 'block';
+        });
+
+        function toggleView(view) {
+            const page1Content = document.getElementById('page1Content');
+            const page2Content = document.getElementById('page2Content');
+            const page2Sidebar = document.getElementById('page2Sidebar');
+
+            if (view === 1) {
+                page1Content.style.display = 'block';
+                page2Content.style.display = 'none';
+                page2Sidebar.style.display = 'none';
+            } else {
+                page1Content.style.display = 'none';
+                page2Content.style.display = 'block';
+                page2Sidebar.style.display = 'block';
+            }
+        }
+
+        // Set default view
+        toggleView(1);
+    </script>
+</body>
+</html>
